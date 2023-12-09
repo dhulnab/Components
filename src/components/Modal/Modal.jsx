@@ -13,12 +13,6 @@ const Modal = ({ isOpen = false, CloseBtnContent, onClose, children }) => {
     onClose();
   };
 
-  if (modal) {
-    document.body.classList.add(styles.activeModal);
-  } else {
-    document.body.classList.remove(styles.activeModal);
-  }
-
   return (
     <>
       {modal ? (
