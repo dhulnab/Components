@@ -1,0 +1,28 @@
+.sm button {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 8px;
+}
+.md button {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 8px;
+}
+
+.secondary {
+  color: black;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+.primary {
+  color: #1c519b;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+.default {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
