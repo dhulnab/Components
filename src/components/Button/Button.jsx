@@ -1,6 +1,6 @@
 import styles from "./Button.module.css";
 
-const Button = ({ type, size, children, style }) => {
+const Button = ({ type, size, children, ...props }) => {
   return (
     <span
       className={size === "sm" ? styles.sm : size === "md" ? styles.md : null}
@@ -13,7 +13,7 @@ const Button = ({ type, size, children, style }) => {
             ? styles.primary
             : styles.default
         }
-        style={style}
+        {...props}
       >
         {children}
       </button>

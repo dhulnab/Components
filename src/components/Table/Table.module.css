@@ -1,0 +1,15 @@
+.table table {
+  width: 100%;
+}
+
+.table table thead {
+  background-color: #eee;
+}
+.table table thead th {
+  text-align: left;
+  padding: 8px;
+}
+.table table tbody td {
+  text-align: left;
+  padding: 8px;
+}

@@ -1,6 +1,4 @@
-import styles from "./Text.module.css";
-
-const Text = ({ size, bold, color, style, children }) => {
+const Text = ({ size, bold, color, style, children, ...props }) => {
   const combinedStyle = {
     color: color,
     fontWeight: bold === true ? 900 : 400,
@@ -9,7 +7,9 @@ const Text = ({ size, bold, color, style, children }) => {
   };
   return (
     <span>
-      <p style={combinedStyle}>{children}</p>
+      <p style={combinedStyle} {...props}>
+        {children}
+      </p>
     </span>
   );
 };

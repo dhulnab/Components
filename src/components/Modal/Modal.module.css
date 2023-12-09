@@ -1,0 +1,86 @@
+body.activeModal {
+  overflow-y: hidden;
+}
+
+.buttonOpen {
+  padding: 6px 18px;
+  display: block;
+  margin: 100px auto 0 auto;
+  font-size: 18px;
+  background-color: rgba(29, 29, 29, 0.895);
+  border: none;
+  border-radius: 10px;
+  transition: 100ms linear 5ms;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+.buttonOpen:hover {
+  background-color: black;
+}
+
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+.modal {
+  animation: fadIn 0.3s;
+}
+
+.overlay {
+  background: rgba(49, 49, 49, 0.8);
+}
+.content {
+  min-height: 100px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 10px;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.buttonClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 8px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.buttonClose2 {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  left: 10px;
+  padding: 12px 8px;
+  color: #fff;
+  background-color: black;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+@keyframes fadIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
