@@ -13,14 +13,15 @@ import { useState } from "react";
 
 export default function Home() {
   const [inputContent, setInputContent] = useState("");
-  console.log(inputContent);
+  const [isOpen, setIsOpen] = useState(false);
   const list = [
-    { id: 1, name: "Ali", age: 22, city: "Baghdad" },
-    { id: 2, name: "Ahmed", age: 20, city: "Baghdad" },
-    { id: 3, name: "Alaa", age: 21, city: "Baghdad" },
-    { id: 4, name: "Baqer", age: 22, city: "Baghdad" },
-    { id: 5, name: "Dhulfiqar", age: 20, city: "Baghdad" },
+    { id: 1, name: "Ali", age: 22, city: "Baghdad", phone: "07800245005" },
+    { id: 2, name: "Ahmed", age: 20, city: "Baghdad", phone: "07800245005" },
+    { id: 3, name: "Alaa", age: 21, city: "Baghdad", phone: "07800245005" },
+    { id: 4, name: "Baqer", age: 22, city: "Baghdad", phone: "07800245005" },
+    { id: 5, name: "Dhulfiqar", age: 20, city: "Baghdad", phone:"07800245005"}
   ];
+
   return (
     <>
       {/* Header */}
@@ -98,21 +99,29 @@ export default function Home() {
         />
         <Space height={20} />
         {/* Modal */}
-        <div>
-          <Modal isOpen={false} onClose={() => console.log("close...")}>
-            <h2>Hello From Modal</h2>
-          </Modal>
-        </div>
+        <Modal
+          isOpen={isOpen}
+          onClose={() => {
+            console.log("close..");
+            setIsOpen(false);
+          }}
+        >
+          <h2>Hello From Modal</h2>
+        </Modal>
+
+        <Button size="md" type="primary" onClick={() => setIsOpen(true)}>
+          Open Modal
+        </Button>
+
         <Space height={20} />
         {/* Table */}
         <Table
           columns={[
-            {
-              id: "Id",
-              name: "Name",
-              age: "Age",
-              city: "City",
-            },
+            { heading: "Id", value: "id" },
+            { heading: "Name", value: "name" },
+            { heading: "Age", value: "age" },
+            { heading: "City", value: "city" },
+            { heading: "Phone Number", value: "phone" },
           ]}
           list={list}
         />

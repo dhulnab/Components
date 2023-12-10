@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Modal.module.css";
 
-const Modal = ({ isOpen = false, CloseBtnContent, onClose, children }) => {
-  const [modal, setModal] = useState(isOpen);
+const Modal = ({ isOpen, CloseBtnContent, onClose, children }) => {
+  const [modal, setModal] = useState(false);
 
-  const openModal = () => {
-    setModal(!modal);
-  };
+  useEffect(() => {
+    setModal(isOpen);
+  }, [isOpen]);
 
   const closeModal = () => {
-    setModal(!modal);
+    setModal(false);
     onClose();
   };
 
@@ -34,10 +34,8 @@ const Modal = ({ isOpen = false, CloseBtnContent, onClose, children }) => {
           </div>
         </div>
       ) : null}
-      <button className={styles.buttonOpen} onClick={openModal}>
-        Open
-      </button>
     </>
   );
 };
+
 export default Modal;
